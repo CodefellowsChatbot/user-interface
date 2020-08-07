@@ -20,4 +20,4 @@ https://github.com/orgs/CodefellowsChatbot/projects/2
 https://docs.google.com/drawings/d/1e66-ylESSl5mYymCikQwHw4gtOq5ZoySrtPB-eQhDbk/edit?usp=sharing
 
 ## Database
-This app is not expecting to use a database.
+This app is not expecting to use a database.  
