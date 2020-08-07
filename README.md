@@ -19,5 +19,7 @@ https://github.com/orgs/CodefellowsChatbot/projects/2
 ## Domain Modeling
 https://docs.google.com/drawings/d/1e66-ylESSl5mYymCikQwHw4gtOq5ZoySrtPB-eQhDbk/edit?usp=sharing
 
+![UML image](./assets/UML-prelim.png)
+
 ## Database
 This app is not expecting to use a database.
