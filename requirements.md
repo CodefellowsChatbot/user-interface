@@ -26,13 +26,4 @@ There is a terminal version of the ChatBot. A user type some question in the ter
 
 ## Non-Functional Requirements (301 & 401 only)
 Our project will be checked for the performance of the target application here would be the User Experience Under Load. It describes how fast or slow the DUT responds, and how satisfied or how the user actually perceives performance.
-
-Security
-Usability
-Testability
-etc….
-Pick 2 non-functional requirements and describe their functionality in your application.
-
-If you are stuck on what non-functional requirements are, do a quick online search and do some research. Write a minimum of 3-5 sentences to describe how the non-functional requirements fits into your app.
-
-You MUST describe what the non-functional requirement is and how it will be implemented. Simply saying “Our project will be testable for testibility” is NOT acceptable. Tell us how, why, and what.
+There also will be a usability testing. The app will be tested for how often the user get what he is looking for. So we can get percentage of 'right respond'.
