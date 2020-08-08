@@ -2,7 +2,7 @@ import requests
 from textwrap import dedent
 
 def pol_debug_test(question):
-    res = requests.post('https://chatbotdevbranch.herokuapp.com/proof_of_life', json={"text": question})
+    res = requests.post('https://chatbotdevbranch.herokuapp.com/question', json={"text": question})
     if res.ok:
         rtn = res.json()["text"]
         print(f"Query return = {rtn} \n")
@@ -16,8 +16,8 @@ class TextHandler:
         print(dedent(text))
         
     def text_intake(self, text):
-        input(dedent(text))
         self.counter += 1
+        return input(dedent(text))
 
 example = TextHandler()
 
@@ -36,23 +36,21 @@ def query_prompt():
     """
     Prompts for user query input.
     """
-    iter = 0
     while True:
         try:
-            if iter == 0:
-                question = input(dedent("What would you like to know about Code Fellows? \n"))
-                iter += 1
+            if example.counter == 0:
+                question = example.text_intake("What would you like to know about Code Fellows? \n")
             else:
-                question = input(dedent("What else would you like to know about Code Fellows? \n"))
+                question = example.text_intake("What else would you like to know about Code Fellows? \n")
 
             if question == 'quit' or question == 'q':
-                print("\nThanks for using our app!  Hope to see you at Code Fellows soon!\n")
+                example.print_text_output("\nThanks for using our app!  Hope to see you at Code Fellows soon!\n")
                 quit()
             else:
                 pol_debug_test(question)
             #     CaptureInput(question)
         except KeyboardInterrupt:
-            print("\nThanks for using our app!  Hope to see you at Code Fellows soon!\n")
+            example.print_text_output("\nThanks for using our app!  Hope to see you at Code Fellows soon!\n")
             exit()
 
 class CaptureInput:
