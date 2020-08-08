@@ -1,31 +1,59 @@
 import requests
+from textwrap import dedent
 
-def pol_debug_test():
-    res = requests.post('https://chatbotdevbranch.herokuapp.com/proof_of_life', json={"text":"json test"})
-    print(dir(res))
+def pol_debug_test(question):
+    res = requests.post('https://chatbotdevbranch.herokuapp.com/proof_of_life', json={"text": question})
+    if res.ok:
+        rtn = res.json()["text"]
+        print(f"Query return = {rtn} \n")
 
-    # if res.ok:
-    #     print(res.json())
+
+class TextHandler:
+    def __init__(self):
+        self.counter = 0
+
+    def print_text_output(self, text):
+        print(dedent(text))
+        
+    def text_intake(self, text):
+        input(dedent(text))
+        self.counter += 1
+
+example = TextHandler()
 
 
 def welcome_message():
     """
     Display a text prompt to the user to describe intended input.
     """
-    print(dedent("""
+    example.print_text_output("""
     Welcome to the Code Fellows chatbot app! 
-    Please enter your question about Code Fellows or their course offerings below. \n
-    """))
+    Please enter your question about Code Fellows or their course offerings below, or 
+    enter 'q' or 'quit' to exit the app. \n
+    """)
 
 def query_prompt():
     """
-    Promts for user query input.
+    Prompts for user query input.
     """
-    pass
-    # while True:
-    # print(dedent("What would you like to know about Code Fellows? \n"))
+    iter = 0
+    while True:
+        try:
+            if iter == 0:
+                question = input(dedent("What would you like to know about Code Fellows? \n"))
+                iter += 1
+            else:
+                question = input(dedent("What else would you like to know about Code Fellows? \n"))
 
-
+            if question == 'quit' or question == 'q':
+                print("\nThanks for using our app!  Hope to see you at Code Fellows soon!\n")
+                quit()
+            else:
+                pol_debug_test(question)
+            #     CaptureInput(question)
+        except KeyboardInterrupt:
+            print("\nThanks for using our app!  Hope to see you at Code Fellows soon!\n")
+            exit()
 
 class CaptureInput:
     """
@@ -41,21 +69,13 @@ class CaptureInput:
 # ***********************************************************
 # Lee's content
 # ***********************************************************
-# def console_print_text(text: str) -> None:
-#   print(text)
-
-# def console_receive_input() -> str:
-#   output = input("Ask the computer a question")
-#   return output
-
-# def some_fancyness():
-#   pass
 
 # def voice_input_fn():
 #   audio_file = some_fancyness()
 #   return audio_file
 
 # input_type =  input("voice or text?")
+
 
 
 
@@ -83,5 +103,14 @@ class CaptureInput:
 
 
 
+def main():
+    welcome_message()
+    query_prompt()
+
 if __name__ == "__main__":
-    pol_debug_test()
+    # pol_debug_test()
+    # welcome_message()
+    # query_prompt()
+    main()
+
+
