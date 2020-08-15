@@ -1,0 +1,24 @@
+{
+    "intents": [
+      {
+        "tag": "percentage",
+        "patterns": [
+          "What is the percentage?",
+          "What's percentage?"
+        ],
+        "responses": [
+          "50%",
+          "50 percentage"
+        ]
+      },
+      {
+        "tag": "students",
+        "patterns": ["How many students?",
+        "How many"],
+        "responses": [
+          "1076",
+          "1076 students" 
+        ]
+      }
+    ]
+  }
