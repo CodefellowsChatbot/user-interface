@@ -7,7 +7,6 @@ def pol_debug_test(question):
         rtn = res.json()["text"]
         print(f"Query return = {rtn} \n")
 
-
 class TextHandler:
     def __init__(self):
         self.counter = 0
