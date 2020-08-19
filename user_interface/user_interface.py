@@ -47,7 +47,6 @@ def query_prompt():
                 quit()
             else:
                 pol_debug_test(question)
-            #     CaptureInput(question)
         except KeyboardInterrupt:
             example.print_text_output("\nThanks for using our app!  Hope to see you at Code Fellows soon!\n")
             exit()
@@ -63,40 +62,6 @@ class CaptureInput:
         if self.input_mode == "text":
             pass
             
-# ***********************************************************
-# Lee's content
-# ***********************************************************
-
-# def voice_input_fn():
-#   audio_file = some_fancyness()
-#   return audio_file
-
-# input_type =  input("voice or text?")
-
-
-
-
-
-# class Input:
-#   def __init__(self, input_type = "text"):
-#     self.input_type = input_type
-#   def accept_input(self):
-#     if self.input_type == "text":
-#       holder = console_receive_input()
-#     return holder
-
-# user_session = Input()
-# user_session.accept_input()
-
-
-# ditto = requests.get("https://pokeapi.co/api/v2/pokemon/ditto")
-
-# print(ditto.json()["abilities"][0]["ability"])
-
-# body = {
-#   "message": "How long is javascript 401?"
-# }
-# response = requests.post(flask_server_url, body=body)
 
 
 
@@ -106,7 +71,5 @@ def main():
 
 if __name__ == "__main__":
     # pol_debug_test()
-    # welcome_message()
-    # query_prompt()
     main()
 
