@@ -2,7 +2,7 @@ import requests
 from textwrap import dedent
 
 def pol_debug_test(question):
-    res = requests.post('https://chatbotdevbranch.herokuapp.com/question', json={"text": question})
+    res = requests.post('https://chatbot-cf.herokuapp.com/question', json={"text": question})
     if res.ok:
         rtn = res.json()["text"]
         print(f"Query return = {rtn} \n")
